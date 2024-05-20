@@ -62,6 +62,9 @@ class RandomPointsAnimation(Scene):
                             
                             # REVIEW: Causes a bug on 0.18.1
                             self.play(LaggedStartMap(Create, grp, lag_ratio=0.5))
+                            # Workaround for the bug
+                            grp.resume_updating()
+                            
                             # self.play(Create(grp))
                             
                             self.wait(1)
